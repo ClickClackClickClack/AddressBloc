@@ -45,4 +45,15 @@ require "csv"
      return nil
    end
 
+   def iterative_search(name)
+     counter = 0
+     while counter < entries.length
+       if entries[counter].name == name
+         return entries[counter]
+       else
+         counter +=1
+       end
+     end
+     return nil
+   end
 end
