@@ -15,6 +15,7 @@ require_relative '../models/address_book'
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
      puts "5 - Exit"
+     puts "6 - Delete all entries"
      print "Enter your selection: "
 
      selection = gets.to_i
@@ -39,6 +40,10 @@ require_relative '../models/address_book'
        when 5
          puts "Good-bye!"
          exit(0)
+       when 6
+         system "clear"
+         demolish
+         main_menu
        else
        system "clear"
        puts "Sorry, that is not a valid input"
@@ -188,3 +193,8 @@ require_relative '../models/address_book'
      puts entry
 
     end
+
+   def demolish
+     @address_book = []
+     puts "All entries Destroyed!"
+   end
